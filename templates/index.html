@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>バイト調査</title>
+  <!-- 省略: ここにCSSのスタイルをコピー -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <h1>バイト調査</h1>
+    {% if message %}  <!-- メッセージがある場合 -->
+      <p style="color: red;">{{ message }}</p>  <!-- 赤文字で表示 -->
+    {% endif %}
+    <form class="quiz" action="/result" method="post">
+      <!-- 省略: ここに質問と回答のラジオボタンをコピー -->
+      <div class="question">
+        <p>ニックネームを記入</p>
+        <ul class="options">
+          <input type="text" name="q0" class="textbox-003" placeholder="ここに入力">
+        </ul>
+      </div>
+      <div class="question">
+        <p>あなたは社交的ですか？</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q1" value="5">5 (とてもあてはまる)</li>
+          <li class="option"><input type="radio" name="q1" value="4">4</li>
+          <li class="option"><input type="radio" name="q1" value="3">3 (どちらともいえない)</li>
+          <li class="option"><input type="radio" name="q1" value="2">2</li>
+          <li class="option"><input type="radio" name="q1" value="1">1 (あてはまらない)</li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>あなたは計画的ですか？</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q2" value="5">5 (とてもあてはまる)</li>
+          <li class="option"><input type="radio" name="q2" value="4">4</li>
+          <li class="option"><input type="radio" name="q2" value="3">3 (どちらともいえない)</li>
+          <li class="option"><input type="radio" name="q2" value="2">2</li>
+          <li class="option"><input type="radio" name="q2" value="1">1 (あてはまらない)</li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>あなたは創造的ですか？</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q3" value="5">5 (とてもあてはまる)</li>
+          <li class="option"><input type="radio" name="q3" value="4">4</li>
+          <li class="option"><input type="radio" name="q3" value="3">3 (どちらともいえない)</li>
+          <li class="option"><input type="radio" name="q3" value="2">2</li>
+          <li class="option"><input type="radio" name="q3" value="1">1 (あてはまらない)</li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>あなたは扶養ギリギリまで稼ぎたいですか？</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q4" value="5">5 (とてもあてはまる)</li>
+          <li class="option"><input type="radio" name="q4" value="4">4</li>
+          <li class="option"><input type="radio" name="q4" value="3">3 (どちらともいえない)</li>
+          <li class="option"><input type="radio" name="q4" value="2">2</li>
+          <li class="option"><input type="radio" name="q4" value="1">1 (あてはまらない)</li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>あなたは几帳面ですか？</p>
+        <ul class="options">
+          <li class="option"><input type="radio" name="q5" value="5">5 (とてもあてはまる)</li>
+          <li class="option"><input type="radio" name="q5" value="4">4</li>
+          <li class="option"><input type="radio" name="q5" value="3">3 (どちらともいえない)</li>
+          <li class="option"><input type="radio" name="q5" value="2">2</li>
+          <li class="option"><input type="radio" name="q5" value="1">1 (あてはまらない)</li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>あなたが今までしてきたバイトで一番長続きしたものはなんですか？</p>
+        <ul class="options">
+          <input type="text" name="q6" class="textbox-003" placeholder="ここに入力">
+        </ul>
+      </div>
+      <div class="submit-container">
+        <button type="submit" class="submit">診断する</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
